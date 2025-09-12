@@ -8,24 +8,17 @@
 
     <div id="mainDiv">
         <h1 class="aa">All Tasks</h1>
-   
 
-        <input>
-        <input type="number" min="1" max="5">
-        <input>
         {% for task in tasks %}
         
         <ul>
-        
-
             <li>
                 <span>{{ task.name }}</span>
+                <span>{{ "⌚" + task.date }}</span>
                 <span>{{ task.importance * "⭐" }}</span>
-                <span>{{ task.date }}</span>
             </li>
         </ul>
         {% endfor %}
     </div>
-    
 </body>
 </html>

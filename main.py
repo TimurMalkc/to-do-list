@@ -22,8 +22,7 @@ class TaskModel(db.Model):
     def __repr__(self):
         return f"Task(name={self.name}, importance={self.importance}, date={self.date})"
 
-#db.create_all() # database dosyası açmak için şunu 1 kere yazıp runla sonra sil
-
+#db.create_all() 
 
 task_post_args = reqparse.RequestParser()
 task_post_args.add_argument("name", type=str, help="enter valid name", required=True)
@@ -87,24 +86,13 @@ class Task(Resource):
         db.session.commit()
         return "", 204
 
-class TaskList(Resource):
-    @marshal_with(resource_fields)
-    def get(self):
-        tasks = TaskModel.query.all()
-        return tasks
 
-class Entry(Resource):
-    def get(self):
-        return "hello"
-
-@app.route("/tasks_html")
+@app.route("/")
 def tasks_html():
     tasks = TaskModel.query.all()
     return render_template("index.html", tasks=tasks)
 
 api.add_resource(Task, "/task/<int:task_id>")
-api.add_resource(TaskList, "/tasks")
-api.add_resource(Entry, "/")
 
 if __name__ == "__main__":
     app.run(debug=True)

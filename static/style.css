@@ -1,9 +1,28 @@
-
-.aa{
-    color: antiquewhite;
-
+h1{
+    color: rgb(241, 186, 120);
+    font-size: 2.5em;
 }
 
 #mainDiv{
     text-align: center;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    border-radius: 7px;
+    align-items: center;
+    display: flex;
+    background-color: rgb(99, 159, 212);
+    padding: 15px;
+    margin-bottom: 10px;
+    color: antiquewhite;
+    font-size: 1.2em;
+
+}
+
+span{
+    flex: 1;
 }
