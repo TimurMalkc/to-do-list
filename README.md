@@ -1,5 +1,5 @@
 # To Do List
-To do list API with Flask
+To do list API with Flask 
 
 **Tech Used:** Python, Flask, SQLAlchemy, HTML, CSS
 
